@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
-import Clouds from "../assets/img/Rain-clouds.jpg";
-import Clear from "../assets/img/Clear-Sky.jpg";
-import Rainy from "../assets/img/Rain.jpg";
+import Clouds from "../assets/img/pictures/Rain-clouds.jpg";
+import Clear from "../assets/img/pictures/Clear-Sky.jpg";
+import Rainy from "../assets/img/pictures/Rain.jpg";
 
 function City() {
   const [weatherData, setWeatherData] = useState(null);
@@ -12,11 +12,11 @@ function City() {
   function imgSwitch() {
     switch (weatherData.weather[0].main) {
       case "Clear":
-        return Clear + " ☀️";
+        return Clear;
       case "Clouds":
-        return Clouds + " ⛅";
+        return Clouds;
       case "Rain":
-        return Rainy + " ☔";
+        return Rainy;
       default:
         return Clouds;
     }
@@ -71,9 +71,7 @@ function City() {
             <hr />
             <h3>
               <span style={{ fontWeight: "200" }}>Weather: </span>
-              {weatherData &&
-                weatherData.weather[0].main === "Clear" &&
-                weatherData.weather[0].main}
+              {weatherData && weatherData.weather[0].main}
             </h3>
             <h3>
               <span style={{ fontWeight: "200" }}>Temperature: </span>
@@ -102,13 +100,7 @@ function City() {
             {
               <Card.Body>
                 <Card.Title>
-                  A picture of{" "}
-                  <b>
-                    {weatherData &&
-                      weatherData.weather[0].main === "Clear" &&
-                      weatherData.name}
-                  </b>{" "}
-                  sky ☀️
+                  A picture of <b>{weatherData && weatherData.name}</b> sky
                 </Card.Title>
               </Card.Body>
             }

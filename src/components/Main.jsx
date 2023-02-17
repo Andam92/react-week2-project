@@ -1,17 +1,32 @@
 import { Row } from "react-bootstrap";
 import City from "./CityCard";
+import rainy from "../assets/img/background/rainy.png";
+import sunny from "../assets/img/background/sunny.jpg";
 
 const Main = () => {
+  /*    function imgSwitch() {
+    switch () {
+      case "Clear":
+        return Clear;
+      case "Clouds":
+        return Clouds;
+      case "Rain":
+        return Rainy;
+      default:
+        return Clouds;
+    }
+  } */
+
   return (
     <Row
       className=""
       style={{
-        backgroundImage: `url(https://dm0qx8t0i9gc9.cloudfront.net/thumbnails/video/D8qa-2E/rainy-stormy-darkness-wet-weather-background-depressed-sad-background_bzxjr4x7h_thumbnail-1080_01.png)`,
+        backgroundImage: `url(${rainy}) `,
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
       }}
     >
-      <City />
+      <City backgroundImage={`../assets/img/background/rainy.png`} />
     </Row>
   );
 };
